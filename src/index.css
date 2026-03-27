@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  --color-worldmine-bg: #0f1115;
+  --color-worldmine-panel: #181a1f;
+  --color-worldmine-hover: #23252a;
+  --color-worldmine-border: #2d3036;
+  --color-worldmine-text: #e0e3eb;
+  --color-worldmine-muted: #8a8f98;
+  --color-worldmine-accent: #74b1be;
+
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+/* Light theme overrides */
+:root[data-theme="light"] {
+  --color-worldmine-bg: #f0f2f5;
+  --color-worldmine-panel: #ffffff;
+  --color-worldmine-hover: #e8eaed;
+  --color-worldmine-border: #d1d5db;
+  --color-worldmine-text: #1f2937;
+  --color-worldmine-muted: #6b7280;
+  --color-worldmine-accent: #0d7c8c;
+}
+
+@layer base {
+
+  html,
+  body,
+  #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-worldmine-bg);
+    color: var(--color-worldmine-text);
+    font-family: var(--font-sans);
+    overflow: hidden;
+  }
+
+  /* Override Leaflet background */
+  .leaflet-container {
+    background: var(--color-worldmine-bg) !important;
+  }
+}
+
+/* Custom Scrollbar for a premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-worldmine-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-worldmine-muted);
+}
+
+/* Explore Popup Animations */
+@keyframes explore-fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-explore-fadein {
+  animation: explore-fadein 0.3s ease-out;
+}
+
+/* Explore panel scrollbar */
+.explore-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.explore-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.explore-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(116, 177, 190, 0.2);
+  border-radius: 2px;
+}
+
+.explore-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(116, 177, 190, 0.4);
+}
