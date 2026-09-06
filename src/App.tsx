@@ -8,6 +8,7 @@ import GraphView from './views/GraphView';
 import TimelineView from './views/TimelineView';
 import DungeonEditor from './views/DungeonEditor';
 import ExplorePopup from './components/ExplorePopup';
+import DiscordiaCharacterCreation from './views/DiscordiaCharacterCreation';
 
 function App() {
   const [isExploreOpen, setIsExploreOpen] = useState(false);
@@ -51,6 +52,7 @@ function App() {
           <Route path="/dungeon" element={<DungeonEditor />} />
           <Route path="/graph" element={<GraphView />} />
           <Route path="/timeline" element={<TimelineView />} />
+          <Route path="/discordia" element={<DiscordiaCharacterCreation />} />
           <Route path="/explore/:role/:id?" element={<ExplorePopup isOpen={true} onClose={() => {}} />} />
         </Routes>
       </div>

@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { Save, Upload, Trash2, Grid, Wand2 } from 'lucide-react';
+import { Save, Upload, Trash2, Grid, Wand2, UserMinus } from 'lucide-react';
 import { useStore } from '../store';
 
 function getCellsInLine(p0: { x: number, y: number }, p1: { x: number, y: number }) {
@@ -1888,6 +1888,13 @@ export default function DungeonEditor() {
                             <Upload className="w-4 h-4" /> Load from Entity
                         </button>
                     </div>
+
+                    <button
+                        onClick={() => setTokens(prev => prev.filter(t => t.type !== 'player'))}
+                        className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-yellow-500/10 hover:bg-yellow-500/20 text-yellow-500 border border-yellow-500/20 rounded-md transition-colors mt-4"
+                    >
+                        <UserMinus className="w-4 h-4" /> Rimuovi Giocatori
+                    </button>
 
                     <button
                         onClick={handleClear}

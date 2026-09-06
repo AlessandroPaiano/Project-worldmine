@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { Home, Users, Map as MapIcon, GitCommit, Calendar, Globe, Flag, Swords, Compass, Sun, Moon } from 'lucide-react';
+import { Home, Users, Map as MapIcon, GitCommit, Calendar, Globe, Flag, Swords, Compass, Sun, Moon, ScrollText } from 'lucide-react';
 
 const navItems = [
     { path: '/', label: 'Overview', icon: Home },
@@ -11,6 +11,7 @@ const navItems = [
     { path: '/dungeon', label: 'Dungeon Maps', icon: MapIcon },
     { path: '/graph', label: 'Graph View', icon: GitCommit },
     { path: '/timeline', label: 'Timeline', icon: Calendar },
+    { path: '/discordia', label: 'Crea Personaggio', icon: ScrollText },
 ];
 
 interface SidebarProps {

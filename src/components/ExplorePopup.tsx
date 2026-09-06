@@ -789,7 +789,6 @@ export default function ExplorePopup({ isOpen, onClose }: ExplorePopupProps) {
     }, [isMaster, isOpen, mapWidth, mapHeight, canvasSize, cellSize]);
 
     const handleWheel = useCallback((e: React.WheelEvent<HTMLCanvasElement>) => {
-        if (!isMaster) return;
         e.preventDefault();
         const zoomSensitivity = 0.001;
         const delta = -e.deltaY * zoomSensitivity;
@@ -811,7 +810,7 @@ export default function ExplorePopup({ isOpen, onClose }: ExplorePopupProps) {
     }, [scale, offset]);
 
     const handleMouseDown = useCallback((e: React.MouseEvent<HTMLCanvasElement>) => {
-        if ((e.button === 1 || e.button === 2) && isMaster) {
+        if (e.button === 1 || e.button === 2) {
             setIsPanning(true);
             setPanStart({ x: e.clientX - offset.x, y: e.clientY - offset.y });
             return;
